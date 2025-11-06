@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中嶋颯 - オリンピック入賞を目指すウィンドサーフィン選手</title>
+    <meta name="description" content="19歳のプロウィンドサーフィン選手・中嶋颯のスポンサー募集サイト。オリンピック入賞とワールドカップでの活躍を目指しています。">
+    <meta name="keywords" content="ウィンドサーフィン, 中嶋颯, スポンサー募集, オリンピック">
+    <meta property="og:title" content="中嶋颯 - Challenge to our dreams">
+    <meta property="og:description" content="共に夢を追いかけてくれるスポンサー様を募集中">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1593642632535-d80e3b988896?w=1200&q=80">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind CSS v4 configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0EA5E9',
+                        secondary: '#06B6D4',
+                        accent: '#7DD3FC',
+                        dark: '#0F172A'
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'M PLUS 1p', 'sans-serif'],
+                        body: ['Noto Sans JP', 'Yu Gothic', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', 'M PLUS 1p', sans-serif;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+
+        /* Navigation sticky styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar.scrolled a {
+            color: #1E3A8A;
+        }
+
+        /* Hero section background overlay */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.2) 100%);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Scroll animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar bg-transparent" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#hero" class="text-2xl font-bold text-primary">中嶋 颯</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-white hover:text-primary transition">選手について</a>
+                    <a href="#dreams" class="text-white hover:text-primary transition">夢と目標</a>
+                    <a href="#benefits" class="text-white hover:text-primary transition">特典</a>
+                    <a href="#plans" class="text-white hover:text-primary transition">プラン</a>
+                    <a href="#contact" class="text-white hover:text-primary transition">お問い合わせ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <video
+                autoplay
+                muted
+                loop
+                playsinline
+                class="w-full h-full object-cover"
+            >
+                <source src="../颯　写真/hero.mp4" type="video/mp4">
+                <!-- Fallback image if video doesn't load -->
+                <img
+                    src="https://images.unsplash.com/photo-1593642632535-d80e3b988896?w=1600&q=80&fm=webp&fit=crop"
+                    alt="Windsurfing in Blue Ocean"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-full object-cover"
+                />
+            </video>
+        </div>
+        <div class="absolute inset-0 hero-overlay"></div>
+
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl mb-8 animate__animated animate__fadeInDown" style="color: #FFFFFF; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); font-weight: 900; letter-spacing: -1px;">
+                自然の力だけで、<br>世界に挑む
+            </h1>
+            <div class="max-w-3xl mx-auto mb-12">
+                <p class="text-lg md:text-xl mb-4 animate__animated animate__fadeInUp" style="color: #FFFFFF; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); line-height: 1.8;">
+                    風と波を味方に、オリンピックを目指す19歳のウインドサーフィン選手。<br>
+                    環境に優しいスポーツの魅力を発信し、海を愛する文化を育てるパートナーを募集します。
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                <button onclick="scrollToSection('contact')" class="bg-primary hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105">
+                    スポンサーになる
+                </button>
+                <button onclick="scrollToSection('about')" class="bg-secondary hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105">
+                    詳しく知る
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gradient-to-b from-white to-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-dark mb-12">選手紹介</h2>
+
+            <!-- Player Profile Grid with Action Photos -->
+            <div class="mb-16" data-aos="fade-up">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mb-12">
+                    <!-- Portrait Photo -->
+                    <div data-aos="fade-right">
+                        <img
+                            src="../颯　写真/IMG_0926.JPG"
+                            alt="中嶋 颯 プロフィール写真"
+                            loading="lazy"
+                            decoding="async"
+                            class="w-full rounded-lg shadow-lg"
+                        />
+                    </div>
+
+                    <!-- Sailing Photo -->
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <img
+                            src="../颯　写真/IMG_0939.JPG"
+                            alt="セーリング中の中嶋颯"
+                            loading="lazy"
+                            decoding="async"
+                            class="w-full rounded-lg shadow-lg hover:shadow-xl transition"
+                        />
+                    </div>
+
+                    <!-- Player Info -->
+                    <div data-aos="fade-left">
+                        <p class="text-3xl text-gray-800 mb-4">
+                            <strong>中嶋 颯</strong><br>
+                            <span class="text-lg text-gray-600">なかじま はやと</span>
+                        </p>
+                        <p class="text-xl text-gray-700 mb-1">
+                            <strong>19歳</strong>
+                        </p>
+                        <p class="text-lg text-gray-700 mb-1">
+                            <strong>慶應義塾大学法学部1年</strong>
+                        </p>
+                        <p class="text-lg text-gray-700 mb-8">
+                            <strong>所属：</strong> TEARS/M.R.C
+                        </p>
+
+                        <h3 class="text-xl font-bold text-primary mb-4">主な実績</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 text-xl">✓</span>
+                                <span>10歳でウィンドサーフィンを開始</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 text-xl">✓</span>
+                                <span>2024年：フィンスラローム・フォイルスラローム2冠達成</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 text-xl">✓</span>
+                                <span>2024年：iQFOiLクラス全日本選手権 総合5位・ユースクラス優勝</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 text-xl">✓</span>
+                                <span>2024年：プロ選手へ転身</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Philosophy Section -->
+            <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg mb-16" data-aos="fade-up">
+                <h3 class="text-3xl md:text-4xl font-bold text-dark mb-8">ウインドサーフィンで、日本の海をもっと豊かに</h3>
+                <div class="space-y-6 text-gray-700 text-lg leading-relaxed">
+                    <p>
+                        ウインドサーフィンは、風と波だけを使うシンプルなスポーツです。エンジンもいらない。電気もいらない。ただ、自然の力を借りて、海の上を自由に駆け抜ける。
+                    </p>
+                    <p>
+                        でも、その奥深さは計り知れません。
+                    </p>
+                    <p>
+                        風を読む感覚、波のリズムを掴む集中力、一瞬の判断力。そして何より、自然に生かされているという実感。これは、実際に体験しなければ伝わらない魅力です。
+                    </p>
+                    <p>
+                        だからこそ、私はオリンピックを目指します。世界の舞台で戦う姿を通じて、ウインドサーフィンの素晴らしさを発信したい。そして、日本の美しい海で、もっと多くの人がこのスポーツに出会えるきっかけを作りたい。
+                    </p>
+                    <div class="border-l-4 border-primary pl-6 py-4 bg-primary/5">
+                        <p class="font-bold text-dark mb-3">
+                            マイナースポーツから、みんなが知っているスポーツへ。
+                        </p>
+                        <p class="font-bold text-dark mb-3">
+                            海を愛する人が、もっと増える社会へ。
+                        </p>
+                        <p class="font-bold text-primary text-xl">
+                            それが、私が描く未来です。一緒に、この挑戦を支えていただけませんか。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievement Timeline with Photos - Compact Version -->
+            <div class="mb-16" data-aos="fade-up">
+                <h3 class="text-3xl font-bold text-center text-dark mb-10">成長の軌跡</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Elementary School 4th Grade -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition" data-aos="fade-up">
+                        <img
+                            src="../颯　写真/小学生　４年.png"
+                            alt="小学4年生時代"
+                            loading="lazy"
+                            decoding="async"
+                            class="w-full h-48 object-cover"
+                        />
+                        <div class="p-4 border-t-4 border-primary">
+                            <h4 class="text-lg font-bold text-primary mb-2">小学4年生</h4>
+                            <p class="text-sm font-bold text-gray-700 mb-1">ウィンドサーフィンを開始</p>
+                            <p class="text-xs text-gray-600">
+                                10歳で海の魅力に惹かれ、本格的な練習を開始。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Elementary School 5th Grade -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+                        <img
+                            src="../颯　写真/小５.png"
+                            alt="小学5年生時代"
+                            loading="lazy"
+                            decoding="async"
+                            class="w-full h-48 object-cover"
+                        />
+                        <div class="p-4 border-t-4 border-secondary">
+                            <h4 class="text-lg font-bold text-primary mb-2">小学5年生</h4>
+                            <p class="text-sm font-bold text-gray-700 mb-1">初マイセイル取得</p>
+                            <p class="text-xs text-gray-600">
+                                自分の道具を揃え、競技の基礎を学び始めた時期。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Junior High School 1st Year -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+                        <img
+                            src="../颯　写真/中１.png"
+                            alt="中学1年生時代"
+                            loading="lazy"
+                            decoding="async"
+                            class="w-full h-48 object-cover"
+                        />
+                        <div class="p-4 border-t-4 border-accent">
+                            <h4 class="text-lg font-bold text-primary mb-2">中学1年生</h4>
+                            <p class="text-sm font-bold text-gray-700 mb-1">本格的にレース参戦</p>
+                            <p class="text-xs text-gray-600">
+                                全国大会に出場。プロを目指すアスリートの道へ。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Achievement Cards -->
+            <div class="mb-16" data-aos="fade-up">
+                <h3 class="text-3xl font-bold text-center text-dark mb-12">2024年 大会優勝・入賞</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Fin Slalom Championship -->
+                    <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up">
+                        <img
+                            src="../颯　写真/フィンスラ優勝.png"
+                            alt="フィンスラローム優勝"
+                            loading="lazy"
+                            decoding="async"
+                            class="w-full rounded-t-lg"
+                        />
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-primary mb-2">フィンスラローム</h4>
+                            <p class="text-gray-700">
+                                全日本アマチュアスラローム選手権で優勝を達成。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Foil Slalom Championship -->
+                    <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                        <img
+                            src="../颯　写真/フォイル優勝.png"
+                            alt="フォイルスラローム優勝"
+                            loading="lazy"
+                            decoding="async"
+                            class="w-full rounded-t-lg"
+                        />
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-primary mb-2">フォイルスラローム</h4>
+                            <p class="text-gray-700">
+                                同じ大会で2冠目を達成。史上初の二冠達成者に。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- iQFOiL Championship -->
+                    <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                        <img
+                            src="../颯　写真/iQフォイル優勝.png"
+                            alt="iQFOiL選手権入賞"
+                            loading="lazy"
+                            decoding="async"
+                            class="w-full rounded-t-lg"
+                        />
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-primary mb-2">iQFOiL全日本選手権</h4>
+                            <p class="text-gray-700">
+                                総合5位・ユースクラスで優勝。次世代の期待の星。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Youth Championship -->
+                    <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                        <img
+                            src="../颯　写真/ユース優勝.png"
+                            alt="ユース優勝"
+                            loading="lazy"
+                            decoding="async"
+                            class="w-full rounded-t-lg"
+                        />
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-primary mb-2">ユースクラス優勝</h4>
+                            <p class="text-gray-700">
+                                同年代の選手の中での圧倒的な実力を証明。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dreams Section -->
+    <section id="dreams" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-dark mb-12">3つの大きな夢</h2>
+
+            <!-- Dream Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Dream 1: Olympic Medal -->
+                <div class="bg-gradient-to-br from-yellow-50 to-white p-8 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up">
+                    <img
+                        src="../颯　写真/olympic_windsurfing.jpg"
+                        alt="Olympic windsurfing athlete in action"
+                        loading="lazy"
+                        decoding="async"
+                        class="w-full rounded-lg mb-4"
+                    />
+                    <h3 class="text-2xl font-bold text-primary mb-3">オリンピック入賞</h3>
+                    <p class="text-gray-700 mb-4">
+                        オリンピックで入賞することが最大の夢。2028年ロサンゼルス五輪での活躍を目指します。
+                    </p>
+                </div>
+
+                <!-- Dream 2: World Tour -->
+                <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <img
+                        src="../颯　写真/pwa_visual.png"
+                        alt="PWA World Tour"
+                        loading="lazy"
+                        decoding="async"
+                        class="w-full rounded-lg mb-4"
+                    />
+                    <h3 class="text-2xl font-bold text-primary mb-3">PWA WorldTour ベスト8</h3>
+                    <p class="text-gray-700 mb-4">
+                        ワールドカップ（PWA WorldTour）で年間ランキングベスト8を達成し、世界トップレベルの選手として活躍します。
+                    </p>
+                </div>
+
+                <!-- Dream 3: Sport Promotion -->
+                <div class="bg-gradient-to-br from-cyan-50 to-white p-8 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <img
+                        src="../颯　写真/sport_promotion.jpg"
+                        alt="ウィンドサーフィンを世界的スポーツに"
+                        loading="lazy"
+                        decoding="async"
+                        class="w-full rounded-lg mb-4"
+                    />
+                    <h3 class="text-2xl font-bold text-primary mb-3">ウィンドサーフィンを世界的スポーツに</h3>
+                    <p class="text-gray-700 mb-4">
+                        自分の活躍を通じて、ウィンドサーフィンを再び注目されるスポーツにすること。多くの人に楽しさを伝えたいです。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Dreams Roadmap -->
+            <div class="bg-gradient-to-r from-primary/5 to-secondary/5 p-8 rounded-lg mb-12" data-aos="fade-up">
+                <h3 class="text-3xl font-bold text-dark mb-10">夢の実現までのロードマップ</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Step 1: 2028 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary">
+                        <h4 class="text-2xl font-bold text-primary mb-2">Step 1</h4>
+                        <p class="text-xl font-bold text-dark mb-4">2028年（Age 22）</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2">•</span>
+                                <span>ロサンゼルス五輪<br>ラストチャンスレガッタ出場</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2">•</span>
+                                <span>WorldTour全参戦<br>最低1つの大会でベスト16</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 2: 2032 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-secondary">
+                        <h4 class="text-2xl font-bold text-primary mb-2">Step 2</h4>
+                        <p class="text-xl font-bold text-dark mb-4">2032年（Age 26）</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-secondary mr-2">•</span>
+                                <span>ブリスベン五輪<br>オリンピック出場</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-secondary mr-2">•</span>
+                                <span>WorldTour全参戦<br>年間ランキング16位以内</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 3: 2036 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-accent">
+                        <h4 class="text-2xl font-bold text-primary mb-2">Step 3</h4>
+                        <p class="text-xl font-bold text-dark mb-4">2036年（Age 30）</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-accent mr-2">•</span>
+                                <span>オリンピック入賞<br>メダル獲得を目指す</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-2">•</span>
+                                <span>WorldTour全参戦<br>年間ランキング8位以内</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dreams Details -->
+            <div class="bg-white p-8 rounded-lg shadow-lg" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-dark mb-6">夢と目標の詳細</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-xl font-bold text-primary mb-4">★ オリンピック入賞</h4>
+                        <p class="text-gray-700 mb-3">
+                            オリンピックで入賞することが最大の夢です。2028年ロサンゼルス五輪での活躍を皮切りに、2032年ブリスベン五輪、そして2036年のオリンピックでメダル獲得を目指します。
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-primary mb-4">★ ワールドカップ成功</h4>
+                        <p class="text-gray-700 mb-3">
+                            PWA WorldTour（ワールドカップ）で年間ランキングベスト8にはいることを目標としています。世界トップレベルの選手として認められることを目指します。
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-primary mb-4">★ スポーツ普及</h4>
+                        <p class="text-gray-700 mb-3">
+                            自分の活躍を通じて、ウィンドサーフィンを再び注目されるスポーツにすることです。多くの人にこのスポーツの楽しさと魅力を伝えたいです。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-16 bg-gradient-to-r from-primary/5 to-secondary/5">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-dark mb-12">スポンサー特典</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Benefit 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center" data-aos="fade-up">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-lg font-bold text-dark mb-2">セイル・ユニフォーム</h3>
+                    <p class="text-sm text-gray-600">セイル・ユニフォーム等にロゴ掲示</p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl mb-4">📋</div>
+                    <h3 class="text-lg font-bold text-dark mb-2">選手登録記載</h3>
+                    <p class="text-sm text-gray-600">成績表・大会実況での紹介</p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl mb-4">📸</div>
+                    <h3 class="text-lg font-bold text-dark mb-2">Instagram</h3>
+                    <p class="text-sm text-gray-600">活動報告・スポンサー紹介</p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl mb-4">🏄</div>
+                    <h3 class="text-lg font-bold text-dark mb-2">体験会実施</h3>
+                    <p class="text-sm text-gray-600">ウィンドサーフィン体験会</p>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-4xl mb-4">🎤</div>
+                    <h3 class="text-lg font-bold text-dark mb-2">PR イベント</h3>
+                    <p class="text-sm text-gray-600">企業PRイベント協力</p>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <button onclick="openModal('modal3')" class="bg-primary hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-lg transition">
+                    特典の詳細を見る
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Support Usage Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-dark mb-12">ご支援の使い道について</h2>
+
+            <div class="space-y-8">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    ウインドサーフィンは、大型の道具を複数セット準備し、海外遠征では専門のコーチとチャーターボートが必要となる競技です。
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    いただいたご支援は、以下のような活動資金として大切に活用させていただきます。
+                </p>
+
+                <!-- Equipment Section -->
+                <div class="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-lg border-l-4 border-primary" data-aos="fade-up">
+                    <h3 class="text-3xl font-bold text-primary mb-6">競技用具</h3>
+                    <p class="text-gray-700 font-semibold mb-4 text-lg">ボード、フォイル、セイル等の専用機材</p>
+                    <p class="text-gray-600 mb-6">
+                        風況や海況に応じて複数セット必要となります。国際大会では、異なる風の条件に対応するため、複数の機材を準備することが成績向上の鍵となります。
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                            <span class="text-gray-700">ボード（2セット）</span>
+                            <span class="font-bold text-dark">約94万円</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                            <span class="text-gray-700">フォイル（4セット）</span>
+                            <span class="font-bold text-dark">約155万円</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                            <span class="text-gray-700">セイル（4セット）</span>
+                            <span class="font-bold text-dark">約70万円</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                            <span class="text-gray-700">ブーム（2セット）</span>
+                            <span class="font-bold text-dark">約41万円</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                            <span class="text-gray-700">マスト（2セット）</span>
+                            <span class="font-bold text-dark">約19万円</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 bg-primary/20 px-3 rounded font-bold">
+                            <span class="text-dark">合計</span>
+                            <span class="text-lg text-primary">約400万円</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expedition Section -->
+                <div class="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-lg border-l-4 border-secondary" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-3xl font-bold text-primary mb-6">国際大会への遠征</h3>
+                    <p class="text-gray-700 font-semibold mb-4 text-lg">航空運賃、道具運搬、コーチ帯同費、滞在費等</p>
+                    <p class="text-gray-600 mb-6">
+                        オリンピックを目指すには、PWA World Tour（プロウィンドサーフィン協会のワールドツアー）や、オリンピック選手権大会などの国際大会に参加することが重要です。1回の遠征には多くの費用が必要となります。
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                            <span class="text-gray-700">国際航空運賃・道具運搬代</span>
+                            <span class="font-bold text-dark">約50万円</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                            <span class="text-gray-700">コーチ帯同費・チャーターボート代</span>
+                            <span class="font-bold text-dark">約70万円</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                            <span class="text-gray-700">滞在費・食事費</span>
+                            <span class="font-bold text-dark">約20万円</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                            <span class="text-gray-700">大会参加費・保険</span>
+                            <span class="font-bold text-dark">約10万円</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 bg-secondary/20 px-3 rounded font-bold">
+                            <span class="text-dark">1回あたりの目安</span>
+                            <span class="text-lg text-primary">約150万円</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Annual Budget Summary -->
+                <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg border-l-4 border-primary" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold text-dark mb-6">年間活動資金の内訳</h3>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex justify-between items-center py-3 bg-white px-4 rounded border-l-4 border-primary">
+                            <span class="text-gray-700 font-semibold">競技用具購入・メンテナンス</span>
+                            <span class="font-bold text-dark text-lg">約400万円</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 bg-white px-4 rounded border-l-4 border-secondary">
+                            <span class="text-gray-700 font-semibold">国際大会遠征（約4～5回）</span>
+                            <span class="font-bold text-dark text-lg">約600～750万円</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 bg-white px-4 rounded border-l-4 border-accent">
+                            <span class="text-gray-700 font-semibold">コーチング・トレーニング費</span>
+                            <span class="font-bold text-dark text-lg">約100～200万円</span>
+                        </div>
+                        <div class="flex justify-between items-center py-4 bg-primary/20 px-4 rounded-lg font-bold text-lg">
+                            <span class="text-dark">年間合計</span>
+                            <span class="text-primary">約1,000万円程度</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-primary">
+                        <p class="text-lg font-semibold text-gray-700 mb-4">
+                            オリンピック入賞を目指すには、年間で約1,000万円程度の活動資金が必要となります。
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            皆様からのご支援は、トレーニング環境の充実、国際大会への参加機会の拡大、最新の競技用具の準備など、私の競技成績向上に直結する投資となります。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Commitment Message -->
+                <div class="bg-primary/15 p-8 rounded-lg border-l-4 border-primary text-center" data-aos="fade-up" data-aos-delay="300">
+                    <p class="text-2xl font-bold text-primary mb-4">
+                        皆様のご支援が、私の挑戦を支える大きな力となります。
+                    </p>
+                    <p class="text-lg text-gray-700">
+                        いただいたご支援は、透明性を持って、最大限の効果が得られるよう、大切に活用させていただくことをお約束いたします。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-b from-white to-primary/5">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div data-aos="fade-right">
+                    <img
+                        src="../颯　写真/dream_together.png"
+                        alt="共に夢を追いかけてください"
+                        loading="lazy"
+                        decoding="async"
+                        class="w-full rounded-lg shadow-lg"
+                    />
+                </div>
+                <div data-aos="fade-left">
+                    <h2 class="text-4xl font-bold text-dark mb-6">共に夢を追いかけてください</h2>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        「僕と一緒に夢を追いかけてくださる方を、僕と一緒に幸せにする自信があります。ぜひ一緒に夢を追いかけてください！」
+                    </p>
+                    <div class="space-y-4">
+                        <button onclick="document.getElementById('contactForm').scrollIntoView({behavior: 'smooth'})" class="w-full bg-primary hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg transition">
+                            スポンサー申込フォーム
+                        </button>
+                        <a href="mailto:haya.haya.hayato.hayato@gmail.com" class="w-full bg-secondary hover:bg-cyan-600 text-white font-bold py-3 px-6 rounded-lg transition block text-center">
+                            お問い合わせ
+                        </a>
+                        <a href="https://instagram.com/hayato_j69" target="_blank" class="w-full bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white font-bold py-3 px-6 rounded-lg transition block text-center">
+                            Instagram (@hayato_j69)
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div id="contactForm" class="mt-16 bg-white p-8 rounded-lg shadow-lg" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-dark mb-6">スポンサーシップお申込み</h3>
+                <form action="https://formspree.io/f/xyzabc" method="POST" class="space-y-4">
+                    <div>
+                        <label class="block text-dark font-bold mb-2">企業名 *</label>
+                        <input type="text" name="company" required class="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-primary">
+                    </div>
+                    <div>
+                        <label class="block text-dark font-bold mb-2">ご担当者名 *</label>
+                        <input type="text" name="name" required class="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-primary">
+                    </div>
+                    <div>
+                        <label class="block text-dark font-bold mb-2">メールアドレス *</label>
+                        <input type="email" name="email" required class="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-primary">
+                    </div>
+                    <div>
+                        <label class="block text-dark font-bold mb-2">電話番号</label>
+                        <input type="tel" name="phone" class="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-primary">
+                    </div>
+                    <div>
+                        <label class="block text-dark font-bold mb-2">スポンサープラン</label>
+                        <select name="plan" class="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-primary">
+                            <option value="">選択してください</option>
+                            <option value="gold">ゴールドスポンサー（1,000万円）</option>
+                            <option value="silver">シルバースポンサー（500万円）</option>
+                            <option value="bronze">ブロンズスポンサー（100万円）</option>
+                            <option value="custom">カスタム（相談）</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-dark font-bold mb-2">メッセージ</label>
+                        <textarea name="message" rows="4" class="w-full border-2 border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-primary"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg transition">
+                        申込を送信
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="mb-2">© 2024 中嶋颯 - Challenge to our dreams</p>
+            <p class="text-sm text-gray-400">
+                <a href="mailto:haya.haya.hayato.hayato@gmail.com" class="hover:text-white transition">haya.haya.hayato.hayato@gmail.com</a> |
+                <a href="https://instagram.com/hayato_j69" target="_blank" class="hover:text-white transition">@hayato_j69</a>
+            </p>
+        </div>
+    </footer>
+
+
+
+    <!-- Modal 3: Benefits and Funding Details -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-3xl font-bold text-dark">スポンサー特典と資金の詳細</h2>
+                <button onclick="closeModal('modal3')" class="text-2xl text-gray-500 hover:text-dark">&times;</button>
+            </div>
+            <div class="space-y-6 text-gray-700">
+                <div>
+                    <h3 class="text-xl font-bold text-primary mb-4">スポンサー特典の詳細</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded">
+                            <h4 class="font-bold">1. セイル・ユニフォームへのロゴ掲示</h4>
+                            <p class="text-sm mt-1">競技用のセイル、ユニフォーム、ボードなどに企業ロゴを大きく掲示します。国内外のレース・イベントで高い露出度を確保します。</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded">
+                            <h4 class="font-bold">2. 選手登録時のスポンサー欄記載</h4>
+                            <p class="text-sm mt-1">成績表や大会実況などで、スポンサー企業として紹介されます。大会の公式記録に残ります。</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded">
+                            <h4 class="font-bold">3. Instagram での紹介・活動報告</h4>
+                            <p class="text-sm mt-1">中嶋颯の公式Instagram（@hayato_j69）で、スポンサー企業の紹介と活動報告を定期的に投稿します。</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded">
+                            <h4 class="font-bold">4. ウィンドサーフィン体験会の実施</h4>
+                            <p class="text-sm mt-1">企業の従業員や顧客向けにウィンドサーフィン体験会を実施します。社団体験とコミュニティ構築を支援します。</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded">
+                            <h4 class="font-bold">5. 企業PR イベントへの協力</h4>
+                            <p class="text-sm mt-1">企業の重要なイベントやキャンペーンに協力し、PR活動をサポートします。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t pt-6">
+                    <h3 class="text-xl font-bold text-primary mb-4">ご支援の使い道について</h3>
+
+                    <p class="text-gray-700 mb-4">
+                        ウインドサーフィンは、大型の道具を複数セット準備し、海外遠征では専門のコーチとチャーターボートが必要となる競技です。
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        いただいたご支援は、以下のような活動資金として大切に活用させていただきます。
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <!-- Equipment Section -->
+                        <div class="bg-gradient-to-br from-primary/10 to-secondary/10 p-4 rounded border-l-4 border-primary">
+                            <h4 class="text-lg font-bold text-primary mb-2">競技用具</h4>
+                            <p class="text-sm text-gray-700 font-semibold mb-1">ボード、フォイル、セイル等の専用機材</p>
+                            <p class="text-xs text-gray-600 mb-3">
+                                （風況や海況に応じて複数セット必要）
+                            </p>
+                            <p class="text-base font-bold text-dark">
+                                目安：約400万円
+                            </p>
+                        </div>
+
+                        <!-- Expedition Section -->
+                        <div class="bg-gradient-to-br from-primary/10 to-secondary/10 p-4 rounded border-l-4 border-secondary">
+                            <h4 class="text-lg font-bold text-primary mb-2">国際大会への遠征</h4>
+                            <p class="text-sm text-gray-700 font-semibold mb-1">航空運賃、道具運搬、コーチ帯同費、滞在費等</p>
+                            <p class="text-xs text-gray-600 mb-3">
+                                （1回あたりの目安：約150万円）
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-primary/10 p-4 rounded border-l-4 border-primary">
+                        <p class="font-semibold text-gray-700 mb-3">
+                            オリンピック入賞を目指すには、年間で約1,000万円程度の活動資金が必要となります。
+                        </p>
+                        <p class="font-bold text-primary">
+                            皆様のご支援が、私の挑戦を支える大きな力となります。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Navigation scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('show');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('show');
+            }
+        }
+
+        // Smooth scroll to section
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form submission handling
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    // Formspree will handle the submission
+                });
+            }
+        });
+    </script>
+</body>
+</html>
